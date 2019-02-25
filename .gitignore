@@ -1,0 +1,6 @@
+node_modules
+tmp
+yarn-error.log
+src/public/images/.DS_Store
+.vscode
+src/config/databasePass.js
