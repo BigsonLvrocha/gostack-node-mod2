@@ -16,4 +16,16 @@ module.exports = {
     });
     return res.redirect('/app/dashboard');
   },
+  async listByProvider(req, res) {
+    const appointments = await Appointment.findAll({
+      where: {
+        provider_id: req.session.user.id,
+      },
+      include: [{
+        model: User,
+        as: 'client',
+      }],
+    });
+    return res.render('appointments/listByProvider', { appointments });
+  },
 };

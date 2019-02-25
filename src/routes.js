@@ -21,7 +21,7 @@ routes.use((req, res, next) => {
   return next();
 });
 
-routes.get('/files/:file', FileController.show);
+routes.get('/files/:file', authMiddleware, FileController.show);
 routes.get('/', guestMiddleware, SessionController.create);
 routes.post('/signin', SessionController.store);
 routes.get('/signup', guestMiddleware, UserController.create);
@@ -34,4 +34,5 @@ routes.get('/app/dashboard', DashboardController.index);
 routes.get('/app/appointments/new/:provider', AppointmentController.create);
 routes.get('/app/available/:provider', AvailableController.index);
 routes.post('/app/appointments/new/:provider', AppointmentController.store);
+routes.get('/app/appointments/provider', AppointmentController.listByProvider);
 module.exports = routes;

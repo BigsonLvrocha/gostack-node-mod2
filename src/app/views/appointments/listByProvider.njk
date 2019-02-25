@@ -1,0 +1,24 @@
+{% extends "layouts/default.njk" %}
+{% block body %}
+  <div class="content">
+    <strong>Meus serviços agendados</strong>
+    {% if appointments.length > 0 %}
+    <ul class="users">
+      {% for appointment in appointments %}
+        <li class="user">
+          <img src="/files/{{ appointment.client.avatar }}" alt="avatar">
+          <div class="user-details">
+            <span><strong>{{ appointment.client.name }}</strong></span>
+            <span>{{ appointment.date.toLocaleString('pt-BR') }}</span>
+          </div>
+          <span></span>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if appointments.length === 0 %}
+      <p>Nenhum serviço agendado</p>
+    {% endif %}
+    <a href="/app/dashboard" class="info last-item">Voltar</a>
+  </div>
+{% endblock %}

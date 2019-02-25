@@ -163,8 +163,34 @@ body {
   color: #fff;
 }
 
+.main-wrapper .content > .last-item {
+  margin-bottom: 0px;
+}
+
 .main-wrapper .content a.logout:hover {
   background: #c15858;
+}
+
+.main-wrapper .content a.info {
+  background: #3e86f9;
+  text-decoration: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  color: #fff;
+}
+
+.main-wrapper .content a.info:hover {
+  background: #1f4787;
+}
+
+.main-wrapper .content > a {
+  margin-bottom: 20px
 }
 
 .main-wrapper .content p {
@@ -184,13 +210,13 @@ body {
   color: #444;
 }
 
-ul.providers {
+ul.providers, ul.users {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
-.provider {
+.provider, .user {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -200,12 +226,24 @@ ul.providers {
   justify-content: space-between;
 }
 
+.user-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-details span{
+  display: flex;
+  align-items: center;
+}
+
 .provider div {
   display: flex;
   align-items: center;
 }
 
-.provider img {
+.provider img, .user img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
